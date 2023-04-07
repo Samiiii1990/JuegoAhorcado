@@ -14,7 +14,7 @@ function ingresarPalabra() {
   console.log(arrPalabra)
   let tablero = ''
   arrPalabra.forEach((letra) => {
-    tablero = tablero + "<td id='" + letra + "'> ? </td>"
+    tablero = tablero + "<td name='" + letra + "'> ? </td>"
   })
   document.getElementById('tablero').innerHTML = `
         <table border="1">
@@ -62,7 +62,11 @@ function buscarCoincidencia(letra, arrPalabra) {
 
   arrPalabra.forEach((caracter, indice) => {
     if (caracter == letra) {
-      document.getElementById(caracter).innerText = letra
+      const elements = document.getElementsByName(caracter)
+
+      elements.forEach((element) => {
+        element.innerText = letra
+      })
       coincidencias++
       if (!letrasAcertadas.includes(letra)) {
         letrasAcertadas.push(letra)
