@@ -2,31 +2,39 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hangman Game</title>
+    <title>Ahorcado</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>Juego del Ahorcado</h1>
+    <div class="title">
+      <h1>Juego del Ahorcado</h1>
+    </div>
+
     <div class="container">
+      <div>
+      <img class="ahorcado" id="image" src="img/ahorcado0.png" alt="" />
+      <div class="letras-acertadas-container">
+        <p class="letras-acertadas" id="letrasAcertadas"></p>
+        <p class="letras-erradas" id="letrasErradas"></p>
+      </div>
+    </div>
       <div class="tablero-container">
         <div class="tablero" id="tablero"></div>
-        <div class="intentos-container">
-          <h2>Intentos Restantes: <span id="intentos">6</span></h2>
-          <img class="ahorcado" id="image" src="img/ahorcado0.png" alt="" />
-        </div>
+      </div>
+      <div class="intentos-container">
+        <h2>Intentos Restantes: <span id="intentos">6</span></h2>
+      </div>
+      <div class="input-container">
+        <form>
+          <label for="letra">Ingresá una letra</label>
+          <br/>
+          <div class="input-container">
+            <input class="input" type="text" id="letra" name="letra" maxlength="1" />
+          </div>
+        </form>
       </div>
       <div class="status-container">
         <h2 id="status"></h2>
-        <div class="tablero-container">
-          <form>
-            <label for="letra">Ingresa una letra:</label>
-            <input class="input" type="text" id="letra" name="letra" maxlength="1" />
-          </form>
-        </div>
-        <div class="letras-acertadas-container">
-          <h3>Letras Acertadas:</h3>
-          <p id="letrasAcertadas"></p>
-        </div>
       </div>
     </div>
     <script src="js/index.js"></script>

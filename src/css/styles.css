@@ -1,44 +1,48 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #F2F2F2;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.title{
+        text-align: center;
 }
 
 .tablero-container {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tablero {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #F5F5F5;
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 .tablero td {
-    font-size: 2rem;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    text-transform: uppercase;
+  font-size: 2rem;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .intentos-container {
@@ -50,57 +54,88 @@ body {
 }
 
 .intentos-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .ahorcado {
-    max-width: 100%;
-    margin-bottom: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  max-width:178px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  background-color: #f5f5f5;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .status-container {
-    width: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .status-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .letras-acertadas-container {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .letras-acertadas-container h3 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.letras-acertadas {
+  text-transform: uppercase;
+  font-size: 20px;
+  color: green;
+}
+
+.letras-erradas {
+  text-transform: uppercase;
+  font-size: 20px;
+  color: red;
 }
 
 .form-container {
-    text-align: center;
+  text-align: center;
 }
-input{
-    width:20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #F5F5F5;
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-    font-size: 30px;
-    text-transform: uppercase;
-    ;
 
+.input-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  width: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  text-transform: uppercase;
 }
 
 label {
-    display: block;
-    
+  display: block;
+}
+.correct {
+  border-color: green;
+}
 
-    
+.incorrect {
+  border-color: red;
 }
