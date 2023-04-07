@@ -4,22 +4,31 @@
     <meta charset="UTF-8" />
     <title>Ahorcado</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="title">
-      <h1>Juego del Ahorcado</h1>
-    </div>
-
-    <div class="container">
-      <div>
-      <img class="ahorcado" id="image" src="img/ahorcado0.png" alt="" />
-      <div class="letras-acertadas-container">
-        <p class="letras-acertadas" id="letrasAcertadas"></p>
-        <p class="letras-erradas" id="letrasErradas"></p>
+    <div>
+      <div class="title">
+        <h1>Juego del Ahorcado</h1>
       </div>
-    </div>
-      <div class="tablero-container">
-        <div class="tablero" id="tablero"></div>
+
+      <div class="main-container">
+        <div>
+          <img class="ahorcado" id="image" src="img/ahorcadoo.svg" alt="" />
+          <div>
+            <p class="letras-acertadas" id="letrasAcertadas"></p>
+            <p class="letras-erradas" id="letrasErradas"></p>
+          </div>
+        </div>
+        <div>
+          <div class="tablero" id="tablero"></div>
+        </div>
       </div>
       <div class="intentos-container">
         <h2>Intentos Restantes: <span id="intentos">6</span></h2>
@@ -27,9 +36,15 @@
       <div class="input-container">
         <form>
           <label for="letra">Ingresá una letra</label>
-          <br/>
+          <br />
           <div class="input-container">
-            <input class="input" type="text" id="letra" name="letra" maxlength="1" />
+            <input
+              class="input"
+              type="text"
+              id="letra"
+              name="letra"
+              maxlength="1"
+            />
           </div>
         </form>
       </div>

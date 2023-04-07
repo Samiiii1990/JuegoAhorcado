@@ -2,8 +2,6 @@ const palabrAdivinar = ingresarPalabra()
 let letrasAcertadas = []
 let letrasErradas = []
 let intentosRestantes = 6
-mostrarLetrasAcertadas()
-mostrarLetrasErradas()
 
 const letra = document.querySelector('input')
 letra.oninput = function () {
@@ -13,7 +11,6 @@ letra.oninput = function () {
 function ingresarPalabra() {
   const palabra = prompt('Ingresa una palabra para adivinar!')
   const arrPalabra = palabra.split('')
-  console.log(arrPalabra)
   let tablero = ''
   arrPalabra.forEach((letra) => {
     tablero = tablero + "<td name='" + letra + "'>_</td>"
@@ -37,25 +34,7 @@ function soloLetras(cadena, palabrAdivinar) {
     return false
   } else {
     const coincidencias = buscarCoincidencia(cadena, palabrAdivinar)
-    if (coincidencias > 0) {
-      document.getElementById(
-        'status',
-      ).innerHTML = `Hubo ${coincidencias} coincidencias!!!`
-    } else {
-      intentosRestantes--
-      document.getElementById('intentos').innerHTML = `${intentosRestantes}`
-      document.getElementById('status').innerHTML = `No hubo coinciencias :(`
-      document.getElementById('image').src = `img/ahorcado${
-        7 - intentosRestantes
-      }.png` 
-      if (intentosRestantes == 0) {
-        document.getElementById(
-          'status',
-        ).innerHTML = `¡Perdiste! La palabra era "${palabrAdivinar.join('')}".`
-        document.getElementById('image').src = `img/gameover.png` 
-        document.querySelector('input').disabled = true
-      }
-    }
+    validarCoincidencias(coincidencias)
     return true
   }
 }
@@ -63,7 +42,7 @@ function soloLetras(cadena, palabrAdivinar) {
 function buscarCoincidencia(letra, arrPalabra) {
   let coincidencias = 0
 
-  arrPalabra.forEach((caracter, indice) => {
+  arrPalabra.forEach((caracter) => {
     if (caracter === letra) {
       const elements = document.getElementsByName(caracter)
 
@@ -88,11 +67,10 @@ function buscarCoincidencia(letra, arrPalabra) {
     letrasErradas.push(letra)
     mostrarLetrasErradas()
 
-
     document.getElementById('intentos').innerHTML = `${intentosRestantes}`
     document.getElementById('image').src = `img/ahorcado${
       7 - intentosRestantes
-    }.png`
+    }.svg`
 
     if (intentosRestantes === 0) {
       document.getElementById(
@@ -109,6 +87,28 @@ function buscarCoincidencia(letra, arrPalabra) {
   }
 
   return coincidencias
+}
+
+function validarCoincidencias(coincidencias) {
+  if (coincidencias > 0) {
+    document.getElementById(
+      'status',
+    ).innerHTML = `Hubo ${coincidencias} coincidencias!!!`
+  } else {
+    intentosRestantes--
+    document.getElementById('intentos').innerHTML = `${intentosRestantes}`
+    document.getElementById('status').innerHTML = `No hubo coinciencias :(`
+    document.getElementById('image').src = `img/ahorcado${
+      7 - intentosRestantes
+    }.svg`
+    if (intentosRestantes == 0) {
+      document.getElementById(
+        'status',
+      ).innerHTML = `¡Perdiste! La palabra era "${palabrAdivinar.join('')}".`
+      document.getElementById('image').src = `img/gameover.svg`
+      document.querySelector('input').disabled = true
+    }
+  }
 }
 
 function mostrarLetrasAcertadas() {
