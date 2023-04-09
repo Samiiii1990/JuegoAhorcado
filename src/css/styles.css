@@ -1,27 +1,32 @@
 body {
   font-family: "Permanent Marker", cursive;
-  background: url("../img/fondo.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background: url("../img/fondo.jpg") no-repeat;
+  background-size: 100vw 100vh;
   color: whitesmoke;
   margin: auto;
-  line-height: 1.5;
   width: 100%;
+}
+
+.container{
+  margin-top: 65px;
 }
 
 .main-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: baseline;
 }
 
 .title {
   text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .tablero td {
   font-size: 40px;
   padding: 10px;
-  margin: 10px;
+  margin: 8px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -32,13 +37,13 @@ body {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 25px;
+  margin-bottom: 10px;
+  font-size: 15px;
 }
 
 .ahorcado {
-  max-width: 250px;
-  min-height: 250px;
+  max-width: 240px;
+  min-height: 240px;
 }
 
 .status-container {
@@ -75,7 +80,7 @@ input {
   border: 2px solid whitesmoke;
   border-radius: 10px;
   padding: 20px;
-  margin: 20px;
+  margin: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   color: whitesmoke;
