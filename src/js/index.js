@@ -40,7 +40,7 @@ function soloLetras(cadena, palabrAdivinar) {
     //si es una cadena valida
     const coincidencias = buscarCoincidencia(cadena, palabrAdivinar) //lama a la funcion
     validarCoincidencias(coincidencias) //llama a la funcion
-    verificarVictoria() //esto agregue //llama a la funcion
+    verificarVictoria() //llama a la funcion
     return true //indica que es una cadena valida
   }
 }
@@ -103,6 +103,11 @@ function validarCoincidencias(coincidencias) {
       ).innerHTML = `¡Perdiste! La palabra era "${palabrAdivinar.join('')}".` //muestra el mensaje, la palabra a adivinar
       document.getElementById('image').src = `img/gameover.svg` //muestra la imagen cara triste
       document.querySelector('input').disabled = true //termina el juego
+      let btn = document.getElementById('button')
+      btn.innerHTML = 'Seguir Jugando'
+      btn.onclick = function () {
+        window.location.reload()
+      }
     }
   }
 }
