@@ -116,7 +116,7 @@ function mostrarLetrasErradas() {
   document.getElementById('letrasErradas').innerHTML = letrasErradas.join(' - ')
 } //idem que mostrar letras acertadas...
 
-//esta funcion agregue no muestra el mensaje si la cara feliz
+//esta funcion muestra mensaje e imagen cuando ganó
 function verificarVictoria() {
   if (letrasAcertadas.length === palabrAdivinar.length) {
     //compara si la longitud de la matriz letrasAcertadas es = a la matriz palabrAdivinar
